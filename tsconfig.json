@@ -6,8 +6,7 @@
     "removeComments": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
-    "declaration": true,
-    "outDir": "lib/"
+    "declaration": true
   },
   "buildOnSave": false,
   "compileOnSave": false

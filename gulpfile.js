@@ -7,6 +7,7 @@ const karma = require('karma');
 const source = require('vinyl-source-stream');
 const sourcemaps = require('gulp-sourcemaps');
 const tsify = require('tsify');
+const typescript = require('gulp-typescript');
 const uglify = require('gulp-uglify');
 
 const noop = Function.prototype;
@@ -16,6 +17,8 @@ const paths = {
     bundle: 'all.spec.js',
     source: 'src/**/*.spec.ts'
   },
+  lib: 'lib/',
+  source: 'src/**/!(*.spec).ts',
   karma: `${__dirname}/karma.conf.js`,
   tsconfig: 'tsconfig.json'
 };
@@ -69,4 +72,20 @@ gulp.task('test', (done) => {
       deleteTests(done);
     });
   });
+});
+
+const buildTypescript = typescript.createProject(paths.tsconfig);
+
+function build(done) {
+  done = done || noop;
+  gulp.src(paths.source)
+  .pipe(buildTypescript())
+  .pipe(gulp.dest(paths.lib))
+  .on('finish', () => {
+    done();
+  });
+}
+
+gulp.task('build', (done) => {
+  build(done);
 });
