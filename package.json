@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "AngularJS title service",
   "main": "lib/index.js",
-  "lib": "lib/index.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
