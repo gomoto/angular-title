@@ -89,3 +89,14 @@ function build(done) {
 gulp.task('build', (done) => {
   build(done);
 });
+
+function clean(done) {
+  done = done || noop;
+  del([paths.lib]).then(() => {
+    done();
+  });
+}
+
+gulp.task('clean', (done) => {
+  clean(done);
+})
