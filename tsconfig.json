@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5",
+    "declaration": true,
+    "outDir": "lib/",
+    "types": [
+      "angular"
+    ]
+  },
+  "buildOnSave": false,
+  "compileOnSave": false
+}

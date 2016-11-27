@@ -1,5 +1,31 @@
 {
   "name": "angular-title",
   "version": "0.0.0",
-  "description": "AngularJS title service"
+  "description": "AngularJS title service",
+  "main": "lib/index.js",
+  "lib": "lib/index.d.ts",
+  "scripts": {
+    "clean": "shx rm -rf lib",
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "angular": "^1.5.9 <2.0.0",
+    "angular-ui-router": "^0.3.2 <2.0.0"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.5.20",
+    "@types/angular-ui-router": "^1.1.35",
+    "angular": "^1.5.9",
+    "angular-ui-router": "^0.3.2",
+    "shx": "^0.2.1",
+    "typescript": "^2.0.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gomoto/angular-title.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gomoto/angular-title/issues"
+  },
+  "license": "MIT"
 }
