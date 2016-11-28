@@ -1,21 +1,29 @@
+import * as test from 'blue-tape';
 import * as angular from 'angular';
-import 'angular-mocks';
 import TitleService from './title.service';
 
-describe('$title', () => {
+/**
+ * Create a new instance of angular injector.
+ * We cannot use angular.mock.inject, which
+ * is only allowed when using jasmine or mocha.
+ */
+const setup = () => {
+  // create a new injector in strict-di mode
+  const $injector = angular.injector(['ng'], true);
+  const $window = $injector.get<ng.IWindowService>('$window');
+  const $title = new TitleService($window);
+  return {
+    $title,
+    $window
+  };
+};
 
-  let $title: TitleService;
-  let $window: ng.IWindowService;
-
-  beforeEach(angular.mock.inject((
-    _$window_: ng.IWindowService
-  ) => {
-    $window = _$window_;
-    $title = new TitleService($window);
-  }));
-
-  it('should set page title', () => {
-    $title.setTitle('customTitle');
-    expect($window.document.title).toEqual('customTitle');
-  });
+test('should set page title', (assert) => {
+  const {
+    $title,
+    $window
+  } = setup();
+  $title.setTitle('customTitle');
+  assert.equal($window.document.title, 'customTitle');
+  assert.end();
 });
