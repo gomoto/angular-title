@@ -18,13 +18,6 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
 
-    // list of files / patterns to load in the browser
-    files: [
-      'src/**/*.ts',
-      'src/**/*.spec.ts'
-    ],
-
-
     // list of files to exclude
     exclude: [
     ],

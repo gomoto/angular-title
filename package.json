@@ -15,9 +15,11 @@
   },
   "devDependencies": {
     "@types/angular": "^1.5.20",
+    "@types/angular-mocks": "^1.5.7",
     "@types/angular-ui-router": "^1.1.35",
     "@types/jasmine": "^2.5.38",
     "angular": "^1.5.9",
+    "angular-mocks": "^1.5.9",
     "angular-ui-router": "^0.3.2",
     "browserify": "^13.1.1",
     "del": "^2.2.2",
