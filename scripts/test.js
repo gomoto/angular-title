@@ -1,5 +1,6 @@
 const browserify = require('browserify');
 const browserRun = require('browser-run');
+const faucet = require('faucet');
 const glob = require('glob');
 const tsify = require('tsify');
 
@@ -12,4 +13,5 @@ browserify({
 .plugin(tsify, { project: paths.tsconfig })
 .bundle()
 .pipe(browserRun())
+.pipe(faucet())
 .pipe(process.stdout);
