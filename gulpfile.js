@@ -10,7 +10,9 @@ const paths = {
   tsconfig: 'tsconfig.json'
 };
 
-const buildTypescript = typescript.createProject(paths.tsconfig);
+const buildTypescript = typescript.createProject(paths.tsconfig, {
+  declaration: true
+});
 
 function build(done) {
   done = done || noop;

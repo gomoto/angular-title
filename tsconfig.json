@@ -5,8 +5,7 @@
     "noImplicitAny": true,
     "removeComments": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es5",
-    "declaration": true
+    "target": "es5"
   },
   "buildOnSave": false,
   "compileOnSave": false
